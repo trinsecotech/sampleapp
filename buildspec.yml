@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - cp ./settings.xml /root/.m2/settings.xml
+    runtime-versions:
+      java: openjdk11
+  post_build:
+    commands:
+      - mvn package
+artifacts:
+  files:
+    - '**/*'
